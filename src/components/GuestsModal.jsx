@@ -4,7 +4,7 @@ import '../GuestsModal.css';
 
 Modal.setAppElement('#root');
 
-const GuestsModal = ({ isOpen, onRequestClose }) => {
+const GuestsModal = ({ isOpen, onRequestClose, onSearch }) => {
   const [adults, setAdults] = useState(0);
   const [children, setChildren] = useState(0);
 
@@ -22,6 +22,15 @@ const GuestsModal = ({ isOpen, onRequestClose }) => {
     } else if (type === 'children' && children > 0) {
       setChildren(children - 1);
     }
+  };
+
+  const handleSearch = () => {
+    
+    const guests = adults + children;
+    onSearch(guests);
+
+    // Cierra el modal
+    onRequestClose();
   };
 
   return (
@@ -71,6 +80,9 @@ const GuestsModal = ({ isOpen, onRequestClose }) => {
           </div>
         </div>
       </div>
+      <button className='searchButton' onClick={handleSearch}>
+        Search
+      </button>
       <button className='closeModal' onClick={onRequestClose}>
         <span className='materialIcons MuiIcon-root' aria-hidden='true'>
           Close
