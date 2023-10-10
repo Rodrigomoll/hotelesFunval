@@ -1,0 +1,38 @@
+.navHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  .navLogo img {
+    max-width: 100px;
+  }
+  
+  .navItems {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .navItem {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .navIcon {
+
+  }
+  
+  .customModal {
+
+  }
+  
+  .closeModal {
+
+  }
+  
